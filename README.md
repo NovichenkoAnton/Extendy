@@ -7,7 +7,7 @@ A set of useful string extensions.
 
 ## Requirements
 
-- iOS 10.0+
+- iOS 11.0+
 - Swift 5+
 
 ## Installation
