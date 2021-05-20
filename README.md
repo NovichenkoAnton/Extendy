@@ -1,9 +1,9 @@
 # Extendy
 A set of useful string extensions.
 
-![Cocoapods](https://img.shields.io/cocoapods/v/Extendy)
-![Cocoapods](https://img.shields.io/cocoapods/l/Extendy)
-![Cocoapods platforms](https://img.shields.io/cocoapods/p/Extendy)
+[![Cocoapods](https://img.shields.io/cocoapods/v/Extendy)](https://cocoapods.org/pods/Extendy)
+[![Cocoapods](https://img.shields.io/cocoapods/l/Extendy)](https://raw.githubusercontent.com/NovichenkoAnton/Extendy/master/LICENSE)
+[![Cocoapods platforms](https://img.shields.io/cocoapods/p/Extendy)](https://cocoapods.org/pods/Extendy)
 
 ## Requirements
 
