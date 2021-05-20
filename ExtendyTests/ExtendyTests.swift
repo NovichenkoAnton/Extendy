@@ -523,4 +523,22 @@ final class ExtendyTests: XCTestCase {
 
 		XCTAssertTrue(string.hasVCardData())
 	}
+
+	func testRound() {
+		let double1 = 12.123123
+		let double2 = 12.129999
+		let double3 = 12.1
+
+		let result1 = double1.round(3)
+		XCTAssertEqual(result1, 12.123)
+
+		let result2 = double2.round(3)
+		XCTAssertEqual(result2, 12.13)
+
+		let result3 = double3.round(3)
+		XCTAssertEqual(result3, 12.1)
+
+		let result4 = double3.round(0)
+		XCTAssertEqual(result4, 12)
+	}
 }
