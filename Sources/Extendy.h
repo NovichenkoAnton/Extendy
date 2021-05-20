@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for Stringify.
+//! Project version number for Extendy.
 FOUNDATION_EXPORT double ExtendyVersionNumber;
 
-//! Project version string for Stringify.
+//! Project version string for Extendy.
 FOUNDATION_EXPORT const unsigned char ExtendyVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Stringify/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <Extendy/PublicHeader.h>
 
 
