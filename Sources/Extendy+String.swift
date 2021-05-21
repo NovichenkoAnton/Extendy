@@ -357,15 +357,15 @@ public extension Extendy where Base == String {
 	/** Returns new string which was made by applying `Format`.
 
 		// .sum
-		let string = "1234".st.applyFormat(.sum())
+		let string = "1234".ext.applyFormat(.sum())
 		print(string) //"1 234,00"
 
 		//.creditCard
-		let string = "1234567890123456".st.applyFormat(.creditCard)
+		let string = "1234567890123456".ext.applyFormat(.creditCard)
 		print(string) //1234 5678 9012 3456
 
 		//Or you can use own formatter
-		let string = "1234".st.applyFormat(.custom(formatter: ownNumberFormatter))
+		let string = "1234".ext.applyFormat(.custom(formatter: ownNumberFormatter))
 
 	- Parameter format: Format of new string
 	- Returns: Formatted string
@@ -385,10 +385,10 @@ public extension Extendy where Base == String {
 
 	/** Remove whitespaces and new lines from both ends, remove whitepsaces inside the string and replace `decimalSeparator` from `,` to `.` using inner `NumberFormatter`. This string suitable as a parameter for network requests e.g. money fields.
 
-		let string = "1 234,56".st.clean()
+		let string = "1 234,56".ext.clean()
 		print(string) //"1234.56"
 
-		let anotherString = "1 234".st.clean()
+		let anotherString = "1 234".ext.clean()
 		print(anotherString) //"1234.00"
 
 	- Parameters:
@@ -414,7 +414,7 @@ public extension Extendy where Base == String {
 
 	/** Convert string between date formats
 
-		let time = "2019-11-22 12:33".st.convertDate(from: "yyyy-MM-dd HH:mm", to: "HH:mm")
+		let time = "2019-11-22 12:33".ext.convertDate(from: "yyyy-MM-dd HH:mm", to: "HH:mm")
 		print(time) //"12:33"
 
 	- Parameters:
