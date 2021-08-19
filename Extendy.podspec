@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "Extendy"
-  spec.version       = "1.1.1"
+  spec.version       = "1.1.2"
   spec.summary       = "A set of usefull extensions."
   spec.homepage      = "https://github.com/NovichenkoAnton/Extendy"
   
