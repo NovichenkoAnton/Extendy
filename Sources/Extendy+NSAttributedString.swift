@@ -120,10 +120,21 @@ public extension NSMutableAttributedString {
 	*/
 	private func attributeSum(integerAttrs: [Attrs], fractionAttrs: [Attrs], currencyMark: String) -> NSMutableAttributedString {
 		var currency = NSMutableAttributedString(string: currencyMark)
+		var separator = NSMutableAttributedString(string: "")
+		
+		let parts = self.string.ext.applyFormat(.sum(minFractionDigits: 0, maxFractionDigits: 2)).components(separatedBy: defaultSeparator.string)
 
-		let parts = self.string.ext.applyFormat(.sum()).components(separatedBy: defaultSeparator.string)
-		let integerPart = parts.first ?? ""
-		let fractionPart = parts.last ?? ""
+		var integerPart = ""
+		var fractionPart = ""
+
+		if parts.count == 2 {
+			integerPart = parts.first!
+			fractionPart = parts.last!
+
+			separator = defaultSeparator.applyAttributes(fractionAttrs)
+		} else {
+			integerPart = parts.first!
+		}
 
 		var integerAttributed = NSMutableAttributedString(string: integerPart)
 		var fractionAttributed = NSMutableAttributedString(string: fractionPart)
@@ -136,7 +147,6 @@ public extension NSMutableAttributedString {
 			fractionAttributed = fractionPart.attributed.applyAttributes(fractionAttrs)
 		}
 
-		let separator = defaultSeparator.applyAttributes(fractionAttrs)
 		currency = currencyMark.trim().attributed.applyAttributes(fractionAttrs)
 
 		return integerAttributed + separator + fractionAttributed + currency

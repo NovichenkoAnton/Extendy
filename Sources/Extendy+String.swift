@@ -44,7 +44,7 @@ public extension String {
 	}
 
 	/// Returns double value of string,
-	/// if a value is not compatible with `Double` - return 0.00
+	/// if a value is not compatible with `Double` - returns `.zero`
 	func toDouble() -> Double {
 		var mutatingString = self.trim().components(separatedBy: .whitespaces).joined(separator: "")
 
@@ -52,11 +52,13 @@ public extension String {
 			mutatingString = mutatingString.replacingOccurrences(of: ",", with: ".")
 		}
 
-		guard let numericString = Double(mutatingString) else {
-			return 0
-		}
+		return Double(mutatingString) ?? .zero
+	}
 
-		return numericString
+	/// Returns integer value of string
+	/// if a value is not compatible with `Int` - returns 0
+	func toInt() -> Int {
+		Int(self) ?? 0
 	}
 
 	/**
