@@ -191,7 +191,7 @@ public extension NSAttributedString {
 	///   - htmlString: String with HTML tags
 	///   - fontSize: Font size
 	///   - foregroundColor: Foregroung color
-	convenience init?(htmlString: String, fontSize: CGFloat, foregroundColor: UIColor) {
+	convenience init?(htmlString: String, fontSize: CGFloat, foregroundColor: UIColor = UIColor.black) {
 		let htmlTemplate = """
 			<!doctype html>
 			<html>
@@ -199,7 +199,7 @@ public extension NSAttributedString {
 				<style>
 				  body {
 					font-family: -apple-system;
-					font-size: "\(fontSize)"px;
+					font-size: \(fontSize)px;
 					color: \(foregroundColor.hexString);
 				  }
 				</style>
