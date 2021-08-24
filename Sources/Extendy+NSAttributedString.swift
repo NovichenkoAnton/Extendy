@@ -163,6 +163,20 @@ private extension NSMutableAttributedString {
 	private var defaultSeparator: NSMutableAttributedString {
 		",".attributed
 	}
+
+	/// Trim attributed string
+	func trim() -> NSAttributedString {
+		let invertedSet = CharacterSet.whitespacesAndNewlines.inverted
+		let startRange = string.rangeOfCharacter(from: invertedSet)
+		let endRange = string.rangeOfCharacter(from: invertedSet, options: .backwards)
+		guard let startLocation = startRange?.upperBound, let endLocation = endRange?.lowerBound else {
+			return NSAttributedString(string: string)
+		}
+		let location = string.distance(from: string.startIndex, to: startLocation) - 1
+		let length = string.distance(from: startLocation, to: endLocation) + 2
+		let range = NSRange(location: location, length: length)
+		return attributedSubstring(from: range)
+	}
 }
 
 // MARK: - NSAttributedString + HTML
@@ -183,7 +197,7 @@ public extension NSAttributedString {
 				options: options,
 				documentAttributes: nil) else { return nil }
 
-		self.init(attributedString: string)
+		self.init(attributedString: string.trim())
 	}
 
 	/// Render HTML string and return styled NSAttributedString

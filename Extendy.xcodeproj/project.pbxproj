@@ -403,7 +403,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = by.novichenko.Extendy;
 				PRODUCT_NAME = Extendy;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -434,7 +434,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = by.novichenko.Extendy;
 				PRODUCT_NAME = Extendy;
 				PROVISIONING_PROFILE_SPECIFIER = "";
